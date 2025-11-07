@@ -1,7 +1,9 @@
+/** @format */
+
 // ==UserScript==
 // @name         Panocam Space Needle Webcam Auto-Refresh
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.2
 // @description  Auto-refresh Space Needle webcam every 10 minutes on the :x5 minute mark
 // @author       Lumikeiju
 // @match        https://www.spaceneedle.com/webcam
@@ -9,8 +11,8 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-	'use strict';
+(function () {
+	"use strict";
 
 	function scheduleRefresh() {
 		const now = new Date();
@@ -40,7 +42,7 @@
 		console.log(`Space Needle webcam will refresh in ${minutesUntilRefresh}m ${secondsUntilRefresh}s at ${nextRefresh} minutes`);
 
 		setTimeout(() => {
-			console.log('Refreshing Space Needle webcam...');
+			console.log("Refreshing Space Needle webcam...");
 			location.reload();
 			scheduleRefresh(); // Schedule next refresh
 		}, msUntilRefresh);
